@@ -9,7 +9,8 @@
     "debug:didi": "node ./src/didi/index.js",
     "debug:meituan": "node ./src/meituan/index.js",
     "debug:practice": "node ./src/practice/index.js",
-    "debug:jd": "node ./src/jd/index.js"
+    "debug:jd": "node ./src/jd/index.js",
+    "debug:tencent": "node ./src/tencent/index.js"
   },
   "main": "src/main.js"
 }
