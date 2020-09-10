@@ -155,17 +155,18 @@ genURL(requireTree);
 // 下一个更大的数
 
 function nextGreaterNum(nums) {
-	const doubleNums = [...nums, ...nums];
-	const len = doubleNums.length;
+	const flattedNums = [...nums, ...nums];
+	const len = flattedNums.length;
 	if (len === 0) return [];
 	let stack = [];
 	let res = new Array(len).fill(-1);
 	for (let i = 0; i < len; i++) {
-        console.log(res);
-        console.log(stack);
-		while (stack.length && doubleNums[i] > doubleNums[stack[stack.length - 1]]) {
+		console.log(res);
+		console.log(stack);
+		console.log("--------------------");
+		while (stack.length && flattedNums[i] > flattedNums[stack[stack.length - 1]]) {
 			let index = stack.pop();
-			res[index] = doubleNums[i];
+			res[index] = flattedNums[i];
 		}
 		stack.push(i);
 	}

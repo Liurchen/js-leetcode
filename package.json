@@ -1,16 +1,17 @@
 {
-  "name": "js-leetcode",
-  "version": "0.0.1",
-  "description": "Leetcode problem solutions in javascript.",
-  "repository": "git@github.com:Liurchen/js-leetcode.git",
-  "author": "rcliu <liurchen@hotmail.com>",
-  "license": "MIT",
-  "scripts": {
-    "debug:didi": "node ./src/didi/index.js",
-    "debug:meituan": "node ./src/meituan/index.js",
-    "debug:practice": "node ./src/practice/index.js",
-    "debug:jd": "node ./src/jd/index.js",
-    "debug:tencent": "node ./src/tencent/index.js"
-  },
-  "main": "src/main.js"
+	"name": "js-leetcode",
+	"version": "0.0.1",
+	"description": "Leetcode problem solutions in javascript.",
+	"repository": "git@github.com:Liurchen/js-leetcode.git",
+	"author": "rcliu <liurchen@hotmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"debug:didi": "node ./src/didi/index.js",
+		"debug:meituan": "node ./src/meituan/index.js",
+		"debug:practice": "node ./src/practice/index.js",
+		"debug:jd": "node ./src/jd/index.js",
+		"debug:tencent": "node ./src/tencent/index.js",
+		"debug:hema": "node ./src/hema/index.js"
+	},
+	"main": "src/main.js"
 }
