@@ -1,5 +1,4 @@
 function unique(arr) {
-	// 编写代码
 	const map = new Map();
 	for (const item of arr) {
 		let key = item;
