@@ -6,12 +6,11 @@
 	"author": "rcliu <liurchen@hotmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"debug:didi": "node ./src/didi/index.js",
-		"debug:meituan": "node ./src/meituan/index.js",
-		"debug:practice": "node ./src/practice/index.js",
-		"debug:jd": "node ./src/jd/index.js",
-		"debug:tencent": "node ./src/tencent/index.js",
-		"debug:hema": "node ./src/hema/index.js"
+		"debug": "node ./src/score/index.js"
 	},
-	"main": "src/main.js"
+	"main": "src/main.js",
+	"dependencies": {
+		"node-xlsx": "^0.15.0",
+		"xlsx": "^0.16.7"
+	}
 }
