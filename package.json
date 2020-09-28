@@ -6,7 +6,7 @@
 	"author": "rcliu <liurchen@hotmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"debug": "node ./src/score/index.js"
+		"debug": "node ./src/linkedlist/index.js"
 	},
 	"main": "src/main.js",
 	"dependencies": {
