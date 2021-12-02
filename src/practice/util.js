@@ -1,6 +1,6 @@
 // Array.prototype.forEach
 // forEach(fn: (val: number, index: number, arr: number[]) => void, thisArg?: any): void
-Array.prototype.forEach_rc = function (fn, thisArg) {
+Array.prototype.forEachRC = function (fn, thisArg) {
 	const arr = this;
 	if (!Array.isArray(arr)) {
 		throw new TypeError("Array must be an array");
@@ -16,7 +16,7 @@ Array.prototype.forEach_rc = function (fn, thisArg) {
 
 // Array.prototype.map
 // map(fn:(currentValue: number, index: number, arr: number[]) => number, thisArg?: object): number[]
-Array.prototype.map_rc = function (fn, thisArg) {
+Array.prototype.mapRC = function (fn, thisArg) {
 	const arr = this;
 	if (!Array.isArray(arr)) {
 		throw new TypeError("Array must be an array");
@@ -35,7 +35,7 @@ Array.prototype.map_rc = function (fn, thisArg) {
 
 // Array.prototype.filter
 // filter(fn: (value: number, index: number, arr: number[]) => boolean, thisArg?: any): number[]
-Array.prototype.filter_rc = function (fn, thisArg) {
+Array.prototype.filterRC = function (fn, thisArg) {
 	const arr = this;
 	if (!Array.isArray(arr)) {
 		throw new TypeError("Array must be an array");
@@ -56,7 +56,7 @@ Array.prototype.filter_rc = function (fn, thisArg) {
 
 // Array.prototype.every
 // every(fn: (val: number, index: number, array: number[]) => boolean, thisArg? :any): boolean
-Array.prototype.every_rc = function (fn, thisArg) {
+Array.prototype.everyRC = function (fn, thisArg) {
 	const arr = this;
 	if (!Array.isArray(arr)) {
 		throw new TypeError("Array must be an array");
@@ -76,7 +76,7 @@ Array.prototype.every_rc = function (fn, thisArg) {
 
 // Array.prototype.reduce
 // reduce(fn: (accumulator: number, val: number, index: number, arr: number[]) => number, initialValue: number): number
-Array.prototype.reduce_rc = function (fn, initialValue) {
+Array.prototype.reduceRC = function (fn, initialValue) {
 	const arr = this;
 	if (!Array.isArray(arr)) {
 		throw new TypeError("Array must be an array");
@@ -104,7 +104,7 @@ Array.prototype.reduce_rc = function (fn, initialValue) {
 // push(val: any): number
 // 返回数组的新长度
 // 接受的参数可以是一个数组
-Array.prototype.push_rc = function (val) {
+Array.prototype.pushRC = function (val) {
 	let arr = this;
 	if (!Array.isArray(arr)) {
 		throw new TypeError("Array must be an array");
@@ -122,7 +122,7 @@ Array.prototype.push_rc = function (val) {
 
 // Array.prototype.pop
 // pop(void): any
-Array.prototype.pop_rc = function () {
+Array.prototype.popRC = function () {
 	let arr = this;
 	if (!Array.isArray(arr)) {
 		throw new TypeError("Array must be an array");
@@ -141,7 +141,7 @@ Array.prototype.pop_rc = function () {
 // remove the first element from an array
 // shift(void): any
 // if the array is empty, return undefined
-Array.prototype.shift_rc = function () {
+Array.prototype.shiftRC = function () {
 	const arr = this;
 	if (!Array.isArray(arr)) {
 		throw new TypeError("Array must be an array");
@@ -156,7 +156,7 @@ Array.prototype.shift_rc = function () {
 // add element to array as the first element
 // unshift(element: any, element2: any, ...elementn: any): number
 // return the length of array
-Array.prototype.unshift_rc = function (element, ...rest) {
+Array.prototype.unshiftRC = function (element, ...rest) {
 	let arr = this;
 	if (!Array.isArray(arr)) {
 		throw new TypeError("Array must be an array");
@@ -174,7 +174,7 @@ Array.prototype.unshift_rc = function (element, ...rest) {
 
 // Array.prototype.flat
 // flat(deep?: number): number[]
-Array.prototype.flat_rc = function (deep) {
+Array.prototype.flatRC = function (deep) {
 	const arr = this;
 	if (!Array.isArray(arr)) {
 		throw new TypeError("must be an array");
@@ -206,7 +206,7 @@ Array.prototype.flat_rc = function (deep) {
 
 // Array.prototype.toString
 // toString(void): string
-Array.prototype.toString_rc = function () {
+Array.prototype.toStringRC = function () {
 	const arr = this;
 	if (arr.length === 0) return "";
 	let str = arr.reduce(function (result, val) {
@@ -223,7 +223,7 @@ Array.prototype.toString_rc = function () {
 
 // 检测各种变量的类型
 // typeof(T: item) => String
-function typeof_rc(item) {
+function typeofRC(item) {
 	// undefined number string boolean null object
 	switch (typeof item) {
 		case "number":
@@ -245,7 +245,7 @@ function typeof_rc(item) {
 }
 
 // instanceof(leftVal: any, rightVal: any): boolean
-function instanceOf_rc(leftVal, rightVal) {
+function instanceOfRC(leftVal, rightVal) {
 	let leftProto = leftVal.__proto__;
 	let rightProto = rightVal.prototype;
 	// 遍历左值的原型链
@@ -266,22 +266,22 @@ function instanceOf_rc(leftVal, rightVal) {
 // Son.prototype = new Father();
 
 // let s = new Son();
-// console.log(instanceOf_rc(s, Father));
+// console.log(instanceOfRC(s, Father));
 
 // new(constructor: ()=>void, ...args): object
 // 1 创建一个空对象
 // 2 空对象的[[prototype]]属性 指向 构造函数的prototype属性
 // 3 调用构造函数，并且将this绑定到obj上
 // 4 返回这个obj
-function new_rc(constructor, ...args) {
+function newRC(constructor, ...args) {
 	let obj = {};
 	obj.__proto__ = constructor.prototype;
 	const res = constructor.apply(obj, args);
 	return res instanceof Object ? res : obj;
 }
 
-// quicksort(arr: number[])
-function quicksort(arr) {
+// quickSort(arr: number[])
+function quickSort(arr) {
 	if (arr.length <= 1) {
 		return arr;
 	}
@@ -429,7 +429,7 @@ let res = adder(1)(2)(3)(4);
  * @param {void}
  * @return {void}
  */
-Array.prototype.reverse_rc = function () {
+Array.prototype.reverseRC = function () {
 	let arr = this;
 	if (!Array.isArray(arr)) return;
 	let h = 0;
@@ -449,7 +449,7 @@ Array.prototype.reverse_rc = function () {
 /**
  * @param {object} context
  */
-Function.prototype.bind_rc = function (context) {
+Function.prototype.bindRC = function (context) {
 	let fn = this;
 	let args = Array.prototype.slice.call(arguments, 1);
 	return function () {

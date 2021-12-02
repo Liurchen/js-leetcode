@@ -23,8 +23,6 @@ n1.right = n4;
 const head = new Node(root.val)
 const p = head;
 
-
-
 function preorder(node) {
     if (node !== null) {
         if (node !== root) {

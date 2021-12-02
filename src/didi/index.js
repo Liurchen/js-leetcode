@@ -19,18 +19,18 @@ function pairs(n) {
 		return;
 	}
 	let abc = 102;
-	const max_abc = 987;
+	const maxAbc = 987;
 	let acc = 100;
-	const not_acc = [111, 222, 333, 444, 555, 666, 777, 888, 999];
-	const need_reset = [210, 310, 410, 510, 610, 710, 810, 910];
+	const notAcc = [111, 222, 333, 444, 555, 666, 777, 888, 999];
+	const needReset = [210, 310, 410, 510, 610, 710, 810, 910];
 
 	const res = [];
 
 	while (acc < 1000) {
-		if (need_reset.includes(acc)) {
+		if (needReset.includes(acc)) {
 			acc -= 10;
 		}
-		if (not_acc.includes(acc)) {
+		if (notAcc.includes(acc)) {
 			if (acc === 999) break;
 			acc += 11;
 			continue;
@@ -40,12 +40,12 @@ function pairs(n) {
 		}
 		if (n - acc > abc) {
 			// abc ++
-			let current_abc = abc;
-			while (current_abc <= max_abc) {
-				current_abc++;
-				if (n - acc === current_abc) {
-					const str = (current_abc + "").split("");
-					if (str[0] !== str[1] && str[1] !== str[2]) res.push(current_abc + " " + acc);
+			let currentAbc = abc;
+			while (currentAbc <= maxAbc) {
+				currentAbc++;
+				if (n - acc === currentAbc) {
+					const str = (currentAbc + "").split("");
+					if (str[0] !== str[1] && str[1] !== str[2]) res.push(currentAbc + " " + acc);
 					break;
 				}
 			}
